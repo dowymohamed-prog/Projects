@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <!-- Metadata -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Portfolio | Mohamed Ahmed Dowy</title>
+    <meta name="author" content="Mohamed Ahmed Dowy">
+    <meta name="description" content="The professional portfolio for Mohamed Ahmed Dowy, a data analyst and IT specialist.">
+
+    <!-- Stylesheets and Fonts -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22&gt;&lt;text y=%22.9em%22 font-size=%2290%22&gt;📊&lt;/text&gt;&lt;/svg&gt;">
+
+    <style>
+      :root {
+        --bg-color: #F4F7FC;
+        --text-color: #555;
+        --heading-color: #111;
+        --theme-color: #0056b3;
+        --card-bg-color: rgba(255, 255, 255, 0.7);
+        --card-border-color: #DEE2E6;
+        --navbar-bg-color: rgba(255, 255, 255, 0.6);
+        --shadow-color: rgba(0, 0, 0, 0.08);
+        --glow-color: rgba(0, 86, 179, 0.1);
+        --bg-gradient: radial-gradient(circle at top left, #E0E7FF, transparent 40%), radial-gradient(circle at bottom right, #D1E0FF, transparent 30%);
+      }
+
+      html[data-theme='dark'] {
+        --bg-color: #0A0F1A;
+        --text-color: #a0aec0;
+        --heading-color: #E8EAED;
+        --theme-color: #38bdf8;
+        --card-bg-color: rgba(22, 27, 38, 0.7);
+        --card-border-color: #30363D;
+        --navbar-bg-color: rgba(13, 17, 23, 0.6);
+        --shadow-color: rgba(0, 0, 0, 0.2);
+        --glow-color: rgba(56, 189, 248, 0.15);
+        --bg-gradient: radial-gradient(circle at top left, rgba(56, 189, 248, 0.1), transparent 40%), radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.1), transparent 30%);
+      }
+
+      /* Base Styles */
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg-color);
+        background-image: var(--bg-gradient);
+        background-attachment: fixed;
+        color: var(--text-color);
+        padding-top: 80px;
+        transition: background-color 0.3s, color 0.3s;
+        overflow-x: hidden;
+      }
+      .hidden { overflow: hidden; }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Roboto Slab', serif;
+        color: var(--heading-color);
+        font-weight: 700;
+      }
+      
+      a { color: var(--theme-color); transition: all 0.2s ease-in-out; }
+      a:hover { text-decoration: none; color: var(--theme-color); filter: brightness(1.2); }
+      .font-weight-bold { font-weight: 700 !important; }
+
+      /* Preloader */
+      .preloader {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background-color: var(--bg-color); display: flex; justify-content: center; align-items: center; z-index: 9999;
+      }
+      .preloader-logo { font-family: 'Roboto Slab', serif; font-size: 3rem; color: var(--heading-color); opacity: 0; }
+      .preloader-logo .ak-k { color: var(--theme-color); }
+
+      /* Navbar */
+      .navbar {
+        background-color: var(--navbar-bg-color);
+        backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--card-border-color); padding: 0.75rem 1rem;
+      }
+      .navbar-brand { font-family: 'Roboto Slab', serif; font-size: 1.5rem; color: var(--heading-color) !important; transition: transform 0.3s ease; }
+      .navbar-brand:hover { transform: scale(1.05); }
+      .nav-link { font-weight: 500; }
+      .navbar-toggler { border: none; }
+      .navbar-toggler:focus { outline: none; box-shadow: none; }
+      .navbar-toggler-icon { color: var(--heading-color); }
+      .toggle-container { cursor: pointer; padding: 0.5rem 0.75rem; }
+      .fa-sun { display: none; } .fa-moon { display: block; }
+      html[data-theme='dark'] .fa-sun { display: block; } html[data-theme='dark'] .fa-moon { display: none; }
+
+      /* Hero Section */
+      .post-header { text-align: center; margin-bottom: 4rem; padding: 2rem 0; }
+      .post-title { font-size: 3.5rem; }
+      .desc { font-size: 1.25rem; color: var(--theme-color); min-height: 40px; }
+
+      /* Content Layout & Cards */
+      .content-card {
+          background-color: var(--card-bg-color);
+          border: 1px solid var(--card-border-color);
+          border-radius: 1rem;
+          padding: 2.5rem;
+          margin-bottom: 2rem;
+          box-shadow: 0 8px 32px var(--shadow-color);
+          backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+      }
+      .content-section h4 { 
+        margin-bottom: 1.5rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--theme-color); display: inline-block;
+      }
+      .content-section ul { list-style: none; padding-left: 0; }
+      .content-section ul li { margin-bottom: 1rem; display: flex; align-items: flex-start; }
+      .content-section ul li i { color: var(--theme-color); margin-right: 12px; margin-top: 5px; }
+
+      /* Profile Section */
+      .profile-pic {
+        width: 200px; height: 200px; object-fit: cover; border-radius: 50%;
+        border: 5px solid var(--card-bg-color); box-shadow: 0 10px 30px var(--shadow-color);
+        margin: 0 auto 2rem auto; display: block;
+      }
+      
+      /* Skill Bars */
+      .skill { margin-bottom: 1.25rem; }
+      .skill-name { font-weight: 500; margin-bottom: 0.5rem; color: var(--heading-color); }
+      .skill-bar {
+        height: 10px; background-color: var(--card-border-color); border-radius: 5px;
+        width: 100%; overflow: hidden;
+      }
+      .skill-level {
+        height: 100%; background-color: var(--theme-color); border-radius: 5px;
+        width: 0; transition: width 1.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
+      
+      /* Social and Footer */
+      .social { text-align: center; padding: 2rem 0; }
+      .contact-icons { display: flex; justify-content: center; gap: 2rem; align-items: center; }
+      .contact-icons a { display: inline-block; font-size: 1.8rem; color: var(--text-color); transition: transform 0.3s ease, color 0.3s ease; }
+      .contact-icons a:hover { transform: translateY(-5px); color: var(--theme-color); }
+      .contact-note { margin-top: 1.5rem; font-style: italic; }
+      footer { background-color: transparent; padding: 1.5rem 0; text-align: center; border-top: 1px solid var(--card-border-color); margin-top: 2rem; }
+
+      /* Responsive Design */
+      @media (max-width: 768px) { .post-title { font-size: 2.5rem; } }
+    </style>
+</head>
+<body class="hidden">
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-logo"><span class="ak-a">M</span><span class="ak-k">D</span></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <a class="navbar-brand title" href="#"><span class="font-weight-bold">Mohamed</span> Dowy</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars navbar-toggler-icon"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto align-items-center">
+                        <li class="nav-item active"><a class="nav-link" href="#">About</a></li>
+                        <li class="nav-item">
+                            <div class="toggle-container" id="theme-toggle">
+                                <i class="fas fa-moon"></i><i class="fas fa-sun"></i>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Content -->
+    <div class="container">
+        <div class="post">
+            <header class="post-header">
+                <div class="g-fade-in"><img class="profile-pic" src="https://via.placeholder.com/200" alt="Mohamed Ahmed Dowy"></div>
+                <h1 class="post-title g-fade-in"><span class="font-weight-bold">Mohamed</span> Ahmed Dowy</h1>
+                <p class="desc g-fade-in"><span id="typed-text"></span></p>
+            </header>
+            
+            <article>
+                <div class="row">
+                    <!-- Left Column -->
+                    <div class="col-lg-6">
+                        <div class="content-card g-fade-in">
+                            <div class="content-section">
+                                <h4><i class="fas fa-user-circle mr-2"></i>Summary</h4>
+                                <p>A detail-oriented and motivated Computer Science student with a passion for transforming data into actionable insights. Eager to leverage academic knowledge and newly acquired data analysis skills to solve complex real-world problems and contribute to a forward-thinking team.</p>
+                            </div>
+                            <div class="content-section">
+                                <h4><i class="fas fa-info-circle mr-2"></i>Personal Information</h4>
+                                <ul>
+                                    <li><i class="fas fa-calendar-alt"></i><strong>Date of Birth:</strong> 02 / 02 / 2000</li>
+                                    <li><i class="fas fa-map-marker-alt"></i><strong>Address:</strong> Egypt</li>
+                                    <li><i class="fas fa-user-friends"></i><strong>Marital Status:</strong> Single</li>
+                                    <li><i class="fas fa-venus-mars"></i><strong>Gender:</strong> Male</li>
+                                </ul>
+                            </div>
+                        </div>
+                         <div class="content-card g-fade-in">
+                            <div class="content-section">
+                                <h4><i class="fas fa-graduation-cap mr-2"></i>Education</h4>
+                                <ul>
+                                    <li><i class="fas fa-university"></i><strong>Faculty of Science – Computer Science Dept.</strong> (Expected 2025)</li>
+                                    <li><i class="fas fa-certificate"></i><strong>Data Analysis Course</strong> - National Telecommunication Institute (NTI), Qena (Expected 2025)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Right Column -->
+                    <div class="col-lg-6">
+                        <div class="content-card g-fade-in">
+                             <div class="content-section">
+                                <h4><i class="fas fa-chart-bar mr-2"></i>Data Analysis Skills</h4>
+                                <div class="skill">
+                                    <div class="skill-name">Power BI</div>
+                                    <div class="skill-bar"><div class="skill-level" data-level="85%"></div></div>
+                                </div>
+                                <div class="skill">
+                                    <div class="skill-name">Tableau</div>
+                                    <div class="skill-bar"><div class="skill-level" data-level="80%"></div></div>
+                                </div>
+                                <div class="skill">
+                                    <div class="skill-name">Python (Pandas, NumPy, Matplotlib)</div>
+                                    <div class="skill-bar"><div class="skill-level" data-level="90%"></div></div>
+                                </div>
+                                <div class="skill">
+                                    <div class="skill-name">Microsoft Excel (Advanced)</div>
+                                    <div class="skill-bar"><div class="skill-level" data-level="95%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-card g-fade-in">
+                             <div class="content-section">
+                                <h4><i class="fas fa-briefcase mr-2"></i>Experience</h4>
+                                <h5><strong>IT Department Intern</strong></h5>
+                                <p class="mb-2"><em>Steigenberger Hotel, Luxor – Summer 2023</em></p>
+                                <ul>
+                                    <li><i class="fas fa-check"></i>Assisted in troubleshooting hardware and software issues for staff and hotel systems.</li>
+                                    <li><i class="fas fa-check"></i>Supported daily IT operations, including network monitoring and system backups.</li>
+                                    <li><i class="fas fa-check"></i>Gained practical experience with hotel information systems and IT infrastructure.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+    
+    <!-- Social and Footer -->
+    <div class="social g-fade-in">
+        <h4>Get in Touch</h4>
+        <div class="contact-icons">
+            <a href="mailto:mohamed_dowy@outlook.com" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/dowy" title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+            <a href="tel:+201008188527" title="Phone"><i class="fas fa-phone"></i></a>
+        </div>
+        <div class="contact-note">✨ Currently seeking new opportunities and collaborations!</div>
+    </div>
+    <footer class="g-fade-in">
+        <div class="container">© 2025 Mohamed Ahmed Dowy. All Rights Reserved.</div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- GSAP & Typed.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            gsap.registerPlugin(ScrollTrigger);
+            
+            // --- PRELOADER ANIMATION ---
+            const body = document.querySelector('body');
+            const preloaderTl = gsap.timeline();
+            preloaderTl
+                .to('.preloader-logo', { opacity: 1, duration: 0.6, scale: 1, ease: 'power2.out' })
+                .to('.preloader-logo', { scale: 1.1, duration: 1.5, ease: 'power1.inOut' })
+                .to('.preloader-logo', { opacity: 0, scale: 0.9, duration: 0.5, ease: 'power2.in' })
+                .to('.preloader', { y: '-100%', duration: 1.2, ease: 'expo.inOut', onComplete: () => {
+                    body.classList.remove('hidden');
+                    startMainAnimations();
+                }}, '-=0.5');
+
+            function startMainAnimations() {
+                // --- TYPED.JS ANIMATION ---
+                new Typed('#typed-text', {
+                    strings: ['Data Analyst', 'IT Specialist', 'Computer Science Student'],
+                    typeSpeed: 50, backSpeed: 30, backDelay: 2000, loop: true, smartBackspace: true
+                });
+
+                // --- GSAP SCROLL-TRIGGERED FADE-IN ANIMATIONS ---
+                gsap.utils.toArray('.g-fade-in').forEach(el => {
+                    gsap.from(el, {
+                        scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none none' },
+                        opacity: 0, y: 50, duration: 1, ease: 'power3.out'
+                    });
+                });
+                
+                // --- PROFILE PICTURE FLOAT ANIMATION ---
+                gsap.to('.profile-pic', {
+                    y: -15, duration: 2, repeat: -1, yoyo: true, ease: 'sine.inOut', delay: 1
+                });
+
+                // --- ANIMATE SKILL BARS ON SCROLL ---
+                gsap.utils.toArray('.skill-level').forEach(bar => {
+                    gsap.to(bar, {
+                        scrollTrigger: { trigger: bar, start: 'top 90%', toggleActions: 'play none none none' },
+                        width: bar.dataset.level,
+                        duration: 1.5,
+                        ease: 'power4.out'
+                    });
+                });
+            }
+
+            // --- THEME TOGGLE ---
+            const themeToggle = document.getElementById('theme-toggle');
+            const html = document.documentElement;
+            const applyTheme = (theme) => {
+                html.setAttribute('data-theme', theme);
+                localStorage.setItem('theme', theme);
+            };
+            themeToggle.addEventListener('click', () => {
+                const newTheme = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+                applyTheme(newTheme);
+            });
+            // Automatically set theme based on user's OS preference or saved choice
+            const savedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme) {
+                applyTheme(savedTheme);
+            } else if (prefersDark) {
+                applyTheme('dark');
+            } else {
+                applyTheme('light');
+            }
+        });
+    </script>
+</body>
+</html>
