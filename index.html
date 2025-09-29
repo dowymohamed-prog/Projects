@@ -4,9 +4,9 @@
     <!-- Metadata -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Portfolio | Mohamed Ahmed Dowy</title>
-    <meta name="author" content="Mohamed Ahmed Dowy">
-    <meta name="description" content="The professional portfolio for Mohamed Ahmed Dowy, a Data Analyst and Computer Science Student.">
+    <title>Portfolio | Mohamed Dowy</title>
+    <meta name="author" content="Mohamed Dowy">
+    <meta name="description" content="The professional portfolio for Mohamed Dowy, a skilled Web Scraper and Computer Science Student.">
 
     <!-- Stylesheets and Fonts -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -138,7 +138,7 @@
       }
       .hero-title { font-size: 3.8rem; }
       .hero-desc { font-size: 1.3rem; color: var(--theme-color-primary); min-height: 40px; }
-      .social-icons { display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; }
+      .social-icons { display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; margin-top: 2rem; }
       .social-icons a { font-size: 1.8rem; color: var(--text-color); transition: transform 0.3s ease, color 0.3s ease; }
       .social-icons a:hover { transform: translateY(-5px); color: var(--theme-color-primary); }
 
@@ -190,8 +190,27 @@
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
-
-      /* --- NEW Skills Section Grid --- */
+      .certification-card {
+        background-color: var(--card-bg-color);
+        border: 1px solid var(--card-border-color);
+        border-radius: 1rem;
+        padding: 2rem;
+        text-align: center;
+        box-shadow: 0 8px 32px var(--shadow-color);
+        backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%;
+      }
+      .certification-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 16px 40px var(--shadow-color), 0 0 20px var(--glow-color);
+      }
+      .certification-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: var(--theme-color-primary);
+      }
+      /* Skills Section Grid */
       .skill-card {
         background-color: var(--card-bg-color);
         border: 1px solid var(--card-border-color);
@@ -310,6 +329,7 @@
                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
                         <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
                         <li class="nav-item">
                             <div class="toggle-container" id="theme-toggle">
                                 <i class="fas fa-moon"></i><i class="fas fa-sun"></i>
@@ -326,12 +346,16 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="container">
-                <div class="g-fade-in"><img class="profile-pic" src="https://raw.githubusercontent.com/ahmedkhaled115/Projects/refs/heads/main/icons/Ahmed.jpg" alt="Mohamed Ahmed Dowy"></div>
-                <h1 class="hero-title g-fade-in"><span class="font-weight-bold">Mohamed</span> Ahmed Dowy</h1>
+                <div class="g-fade-in"><img class="profile-pic" src="https://raw.githubusercontent.com/ahmedkhaled115/Projects/refs/heads/main/icons/Ahmed.jpg" alt="Mohamed Dowy"></div>
+                <h1 class="hero-title g-fade-in"><span class="font-weight-bold">Mohamed</span> Dowy</h1>
                 <p class="hero-desc g-fade-in"><span id="typed-text"></span></p>
                 <div class="social-icons g-fade-in">
                     <a href="mailto:mohamed_dowy@outlook.com" title="Email"><i class="fas fa-envelope"></i></a>
-                    <a href="https://www.linkedin.com/in/dowy" title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/ahmed" title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    <a href="https://www.upwork.com/ahmed" title="Upwork" target="_blank" rel="noopener noreferrer"><i class="fas fa-briefcase"></i></a>
+                    <a href="https://www.fiverr.com/ahmed" title="Fiverr" target="_blank" rel="noopener noreferrer"><i class="fas fa-briefcase-medical"></i></a>
+                    <a href="https://khamsat.com/user/ahmed11560" title="Khamsat" target="_blank" rel="noopener noreferrer"><i class="fas fa-shopping-bag"></i></a>
                     <a href="tel:+201008188527" title="Phone"><i class="fas fa-phone"></i></a>
                 </div>
             </div>
@@ -343,92 +367,70 @@
                 <h2 class="section-title">About Me</h2>
                 <div class="about-content g-fade-in">
                     <p>
-                        A detail-oriented Computer Science student with a passion for transforming complex data into actionable insights. I am eager to apply my academic knowledge and hands-on data analysis skills to solve real-world problems, drive data-informed decision-making, and contribute to a forward-thinking team.
+                        As a skilled web scraper, I have extensive experience in extracting data and information from various websites using automated tools and software. My expertise in web scraping has enabled me to efficiently gather and analyze large amounts of data for various purposes such as market research, competitive analysis, and data mining. I am highly proficient in using popular web scraping tools and frameworks like Beautiful Soup, Scrapy, and Selenium to extract data from websites that may be difficult to access manually.
                     </p>
                     <a href="#" class="btn-resume">Download Resume</a>
                 </div>
             </div>
         </section>
-
-        <!-- Core Highlights Section -->
-        <section id="highlights" class="section" style="background-color: var(--card-bg-color);">
-            <div class="container">
-                <h2 class="section-title">Core Highlights</h2>
-                <div class="row">
-                    <div class="col-md-4 mb-4 g-stagger-in">
-                        <div class="highlight-card">
-                            <i class="fas fa-chart-line highlight-icon"></i>
-                            <h4>Data-Driven Insights</h4>
-                            <p>Proficient in using tools like Power BI and Tableau to visualize data and uncover trends that inform business strategy.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4 g-stagger-in">
-                        <div class="highlight-card">
-                            <i class="fas fa-code highlight-icon"></i>
-                            <h4>Technical Proficiency</h4>
-                            <p>Skilled in Python (Pandas, NumPy) and Advanced Excel for data manipulation, cleaning, and analysis.</p>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-4 g-stagger-in">
-                        <div class="highlight-card">
-                            <i class="fas fa-lightbulb highlight-icon"></i>
-                            <h4>Problem Solving</h4>
-                            <p>Leveraging an analytical mindset to tackle complex challenges and deliver effective, data-backed solutions.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
         
         <!-- Skills Section -->
-        <section id="skills" class="section">
+        <section id="skills" class="section" style="background-color: var(--card-bg-color);">
             <div class="container">
                 <h2 class="section-title">Technical Skills</h2>
-                <div class="row">
-                    <!-- Skill Card 1 -->
-                    <div class="col-lg-3 col-md-4 col-6 mb-4 g-stagger-in">
-                        <div class="skill-card">
-                            <i class="fas fa-chart-pie skill-icon"></i>
-                            <div class="skill-name">Power BI</div>
-                        </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-2 col-md-4 col-6 mb-4 g-stagger-in">
+                        <div class="skill-card"><i class="fab fa-python skill-icon"></i><div class="skill-name">Python</div></div>
                     </div>
-                    <!-- Skill Card 2 -->
-                    <div class="col-lg-3 col-md-4 col-6 mb-4 g-stagger-in">
-                        <div class="skill-card">
-                            <i class="fas fa-chart-area skill-icon"></i>
-                            <div class="skill-name">Tableau</div>
-                        </div>
+                    <div class="col-lg-2 col-md-4 col-6 mb-4 g-stagger-in">
+                        <div class="skill-card"><i class="fas fa-database skill-icon"></i><div class="skill-name">SQL & MySQL</div></div>
                     </div>
-                    <!-- Skill Card 3 -->
-                    <div class="col-lg-3 col-md-4 col-6 mb-4 g-stagger-in">
-                        <div class="skill-card">
-                            <i class="fab fa-python skill-icon"></i>
-                            <div class="skill-name">Python</div>
-                        </div>
+                    <div class="col-lg-2 col-md-4 col-6 mb-4 g-stagger-in">
+                        <div class="skill-card"><i class="fab fa-git-alt skill-icon"></i><div class="skill-name">Git & GitHub</div></div>
                     </div>
-                    <!-- Skill Card 4 -->
-                    <div class="col-lg-3 col-md-4 col-6 mb-4 g-stagger-in">
-                        <div class="skill-card">
-                            <i class="fas fa-file-excel skill-icon"></i>
-                            <div class="skill-name">MS Excel</div>
-                        </div>
+                    <div class="col-lg-2 col-md-4 col-6 mb-4 g-stagger-in">
+                        <div class="skill-card"><i class="fas fa-cogs skill-icon"></i><div class="skill-name">Web APIs</div></div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-6 mb-4 g-stagger-in">
+                        <div class="skill-card"><i class="fab fa-html5 skill-icon"></i><div class="skill-name">HTML & CSS</div></div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-6 mb-4 g-stagger-in">
+                        <div class="skill-card"><i class="fas fa-broom skill-icon"></i><div class="skill-name">Data Cleaning</div></div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Experience & Education Timeline -->
-        <section id="experience" class="section" style="background-color: var(--card-bg-color);">
+        <section id="experience" class="section">
             <div class="container">
                 <h2 class="section-title">Career & Education</h2>
                 <div class="timeline">
-                    <!-- Experience Item -->
+                    <!-- Experience Item 1 -->
                     <div class="timeline-item g-fade-in">
                         <div class="timeline-content">
-                            <span class="timeline-date">Summer 2023</span>
-                            <h5>IT Department Intern</h5>
+                            <span class="timeline-date">2025</span>
+                            <h5>Freelance Data Analyst</h5>
+                            <p><em>Upwork</em></p>
+                            <p>Completed numerous data scraping projects for clients ranging from small businesses to large enterprises, earning a stellar reputation for delivering accurate and timely results, often exceeding client expectations.</p>
+                        </div>
+                    </div>
+                    <!-- Experience Item 2 -->
+                    <div class="timeline-item g-fade-in">
+                        <div class="timeline-content">
+                            <span class="timeline-date">2024</span>
+                            <h5>Freelance Data Scraper</h5>
+                            <p><em>Khamsat (Zamzam medical Company)</em></p>
+                            <p>Successfully completed projects for clients across e-commerce, finance, and healthcare, expanding my professional network within the Middle East region.</p>
+                        </div>
+                    </div>
+                    <!-- Experience Item 3 -->
+                    <div class="timeline-item g-fade-in">
+                        <div class="timeline-content">
+                            <span class="timeline-date">2023</span>
+                            <h5>I.T Intern</h5>
                             <p><em>Steigenberger Hotel, Luxor</em></p>
-                            <p>Provided technical support, troubleshooting hardware and software issues to ensure operational efficiency and gained experience with enterprise-level information systems.</p>
+                            <p>Assisted the IT team with daily network and system administration tasks. Gained hands-on experience with network configuration, troubleshooting, routing, and Windows Server administration.</p>
                         </div>
                     </div>
                     <!-- Education Item -->
@@ -440,13 +442,37 @@
                             <p>Building a strong theoretical and practical foundation in computer science, algorithms, and data structures.</p>
                         </div>
                     </div>
-                    <!-- Education Item 2 -->
-                    <div class="timeline-item g-fade-in">
-                        <div class="timeline-content">
-                            <span class="timeline-date">Expected 2025</span>
-                            <h5>Data Analysis Course</h5>
-                            <p><em>National Telecommunication Institute (NTI)</em></p>
-                            <p>Completing intensive, hands-on training in data analysis techniques, tools, and best practices.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="section" style="background-color: var(--card-bg-color);">
+            <div class="container">
+                <h2 class="section-title">Certifications</h2>
+                <div class="row">
+                    <div class="col-md-6 col-lg-3 mb-4 g-stagger-in">
+                        <div class="certification-card">
+                            <i class="fas fa-database certification-icon"></i>
+                            <h6>Databases and SQL for Data Science</h6>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 mb-4 g-stagger-in">
+                        <div class="certification-card">
+                            <i class="fas fa-sitemap certification-icon"></i>
+                            <h6>Relational Databases (RDBMS) Essentials</h6>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 mb-4 g-stagger-in">
+                        <div class="certification-card">
+                            <i class="fas fa-cogs certification-icon"></i>
+                            <h6>Data Engineering Essentials</h6>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 mb-4 g-stagger-in">
+                        <div class="certification-card">
+                            <i class="fas fa-search-dollar certification-icon"></i>
+                            <h6>Querying Databases with SQL</h6>
                         </div>
                     </div>
                 </div>
@@ -457,7 +483,7 @@
     
     <!-- Footer -->
     <footer class="g-fade-in">
-        <div class="container">© 2025 Mohamed Ahmed Dowy. All Rights Reserved.</div>
+        <div class="container">© 2025 Mohamed Dowy. All Rights Reserved.</div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
@@ -483,7 +509,7 @@
             function startMainAnimations() {
                 // --- TYPED.JS ANIMATION ---
                 new Typed('#typed-text', {
-                    strings: ['Data Analyst', 'Computer Science Student', 'Problem Solver'],
+                    strings: ['Web Scraper', 'Data Analyst', 'Python Developer', 'Computer Science Student'],
                     typeSpeed: 50, backSpeed: 30, backDelay: 2000, loop: true, smartBackspace: true
                 });
 
@@ -497,7 +523,7 @@
                 
                 // --- STAGGERED FADE-IN FOR CARDS ---
                 gsap.utils.toArray(".g-stagger-in").forEach((section) => {
-                    const elems = section.querySelectorAll(".col-md-4, .col-lg-3");
+                    const elems = section.querySelectorAll(".col-md-4, .col-lg-3, .col-lg-2");
                     if (elems.length) {
                         gsap.from(elems, {
                             scrollTrigger: {
