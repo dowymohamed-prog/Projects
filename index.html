@@ -138,9 +138,14 @@
       }
       .hero-title { font-size: 3.8rem; }
       .hero-desc { font-size: 1.3rem; color: var(--theme-color-primary); min-height: 40px; }
-      .social-icons { display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; margin-top: 2rem; }
+      .social-icons { display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; margin-top: 2rem; align-items: center;}
       .social-icons a { font-size: 1.8rem; color: var(--text-color); transition: transform 0.3s ease, color 0.3s ease; }
       .social-icons a:hover { transform: translateY(-5px); color: var(--theme-color-primary); }
+      .social-icons .custom-icon { width: 28px; height: 28px; filter: grayscale(1); transition: filter 0.3s ease;}
+      .social-icons a:hover .custom-icon { filter: grayscale(0); }
+      html[data-theme='dark'] .social-icons .custom-icon { filter: invert(1) grayscale(1) brightness(1.5); }
+      html[data-theme='dark'] .social-icons a:hover .custom-icon { filter: invert(0) grayscale(0) brightness(1); }
+
 
       /* About Section */
       .about-content {
@@ -346,16 +351,22 @@
         <!-- Hero Section -->
         <section class="hero">
             <div class="container">
-                <div class="g-fade-in"><img class="profile-pic" src="https://raw.githubusercontent.com/ahmedkhaled115/Projects/refs/heads/main/icons/Ahmed.jpg" alt="Mohamed Dowy"></div>
+                <div class="g-fade-in"><img class="profile-pic" src="https://raw.githubusercontent.com/dowymohamed-prog/Projects/refs/heads/main/fac3f5df-85c5-403c-b7e7-150a051dd471.jpeg" alt="Mohamed Dowy"></div>
                 <h1 class="hero-title g-fade-in"><span class="font-weight-bold">Mohamed</span> Dowy</h1>
                 <p class="hero-desc g-fade-in"><span id="typed-text"></span></p>
                 <div class="social-icons g-fade-in">
                     <a href="mailto:mohamed_dowy@outlook.com" title="Email"><i class="fas fa-envelope"></i></a>
                     <a href="https://www.linkedin.com/in/ahmed" title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
                     <a href="https://github.com" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-                    <a href="https://www.upwork.com/ahmed" title="Upwork" target="_blank" rel="noopener noreferrer"><i class="fas fa-briefcase"></i></a>
-                    <a href="https://www.fiverr.com/ahmed" title="Fiverr" target="_blank" rel="noopener noreferrer"><i class="fas fa-briefcase-medical"></i></a>
-                    <a href="https://khamsat.com/user/ahmed11560" title="Khamsat" target="_blank" rel="noopener noreferrer"><i class="fas fa-shopping-bag"></i></a>
+                    <a href="https://www.upwork.com/ahmed" title="Upwork" target="_blank" rel="noopener noreferrer">
+                        <img src="https://raw.githubusercontent.com/dowymohamed-prog/Projects/refs/heads/main/upwork.png" alt="Upwork" class="custom-icon">
+                    </a>
+                    <a href="https://www.fiverr.com/ahmed" title="Fiverr" target="_blank" rel="noopener noreferrer">
+                        <img src="https://raw.githubusercontent.com/dowymohamed-prog/Projects/refs/heads/main/Fiverr.png" alt="Fiverr" class="custom-icon">
+                    </a>
+                    <a href="https://khamsat.com/user/ahmed11560" title="Khamsat" target="_blank" rel="noopener noreferrer">
+                        <img src="https://raw.githubusercontent.com/dowymohamed-prog/Projects/refs/heads/main/Khamsat.png" alt="Khamsat" class="custom-icon">
+                    </a>
                     <a href="tel:+201008188527" title="Phone"><i class="fas fa-phone"></i></a>
                 </div>
             </div>
