@@ -191,17 +191,46 @@
         -webkit-text-fill-color: transparent;
       }
 
-      /* Skills Section */
-      .skill { margin-bottom: 1.5rem; }
-      .skill-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
-      .skill-name { font-weight: 500; color: var(--heading-color); }
-      .skill-percentage { font-size: 0.9em; font-weight: 500; color: var(--text-color); }
+      /* --- NEW Skills Section Styling --- */
+      .skill { margin-bottom: 2.5rem; }
+      .skill-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.75rem;
+      }
+      .skill-name {
+        font-weight: 500;
+        color: var(--heading-color);
+        display: flex;
+        align-items: center;
+        font-size: 1.1rem;
+      }
+      .skill-icon {
+        margin-right: 12px;
+        font-size: 1.5rem;
+        background: var(--theme-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        width: 30px;
+        text-align: center;
+      }
+      .skill-percentage {
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--text-color);
+      }
       .skill-bar {
-        height: 10px; background-color: var(--card-border-color); border-radius: 5px;
-        width: 100%; overflow: hidden;
+        height: 8px;
+        background-color: var(--card-border-color);
+        border-radius: 4px;
+        width: 100%;
+        overflow: hidden;
       }
       .skill-level {
-        height: 100%; background: var(--theme-gradient); border-radius: 5px;
+        height: 100%;
+        background: var(--theme-gradient);
+        border-radius: 4px;
         width: 0;
       }
 
@@ -372,30 +401,42 @@
                 <h2 class="section-title">Technical Skills</h2>
                 <div class="row">
                     <div class="col-lg-10 mx-auto">
+                        <!-- Skill 1 -->
                         <div class="skill g-fade-in">
                             <div class="skill-header">
-                                <div class="skill-name">Power BI</div>
+                                <div class="skill-name">
+                                    <i class="fas fa-chart-pie skill-icon"></i> Power BI
+                                </div>
                                 <div class="skill-percentage" data-goal="85">0%</div>
                             </div>
                             <div class="skill-bar"><div class="skill-level" data-level="85%"></div></div>
                         </div>
+                        <!-- Skill 2 -->
                         <div class="skill g-fade-in">
                             <div class="skill-header">
-                                <div class="skill-name">Tableau</div>
+                                <div class="skill-name">
+                                    <i class="fas fa-chart-area skill-icon"></i> Tableau
+                                </div>
                                 <div class="skill-percentage" data-goal="80">0%</div>
                             </div>
                             <div class="skill-bar"><div class="skill-level" data-level="80%"></div></div>
                         </div>
+                        <!-- Skill 3 -->
                         <div class="skill g-fade-in">
                             <div class="skill-header">
-                                <div class="skill-name">Python (Pandas, NumPy, Matplotlib)</div>
+                                <div class="skill-name">
+                                    <i class="fab fa-python skill-icon"></i> Python (Pandas, NumPy, Matplotlib)
+                                </div>
                                 <div class="skill-percentage" data-goal="90">0%</div>
                             </div>
                             <div class="skill-bar"><div class="skill-level" data-level="90%"></div></div>
                         </div>
+                        <!-- Skill 4 -->
                         <div class="skill g-fade-in">
                             <div class="skill-header">
-                                <div class="skill-name">Microsoft Excel (Advanced)</div>
+                                <div class="skill-name">
+                                    <i class="fas fa-file-excel skill-icon"></i> Microsoft Excel (Advanced)
+                                </div>
                                 <div class="skill-percentage" data-goal="95">0%</div>
                             </div>
                             <div class="skill-bar"><div class="skill-level" data-level="95%"></div></div>
@@ -536,7 +577,7 @@
                 applyTheme(newTheme);
             });
             const savedTheme = localStorage.getItem('theme');
-            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
             if (savedTheme) { applyTheme(savedTheme); }
             else if (prefersDark) { applyTheme('dark'); }
             else { applyTheme('light'); }
